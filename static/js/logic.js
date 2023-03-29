@@ -2,12 +2,12 @@
 // USGS Earthquake data using past week's data (note: updates every minute)
 
 
-// Step 1: Store API url
+// Store API url
 // ----------------------------------------------------
 var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
 
-// Step 2: Create size and colour functions
+// size and colour functions
 // Governs size and colour of markers based on magnitude of earthquake
 // ----------------------------------------------------
 function markerSize(mag) {
@@ -15,15 +15,15 @@ function markerSize(mag) {
 }
 
 function getColor(d) {
-    return d >= 90 ? '#AFBBEF':
-           d >= 70 ? '#B7C3F2':
-           d >= 50 ? '#C0CAF5':
-           d >= 30 ? '#C9D2F7':
-           d >= 10 ? '#D2DAF9':
-                     '#DBE2FB';
+    return d >= 90 ? '#566191':
+           d >= 70 ? '#6D79AF':
+           d >= 50 ? '#8692CD':
+           d >= 30 ? '#9FACE9':
+           d >= 10 ? '#B2BEF0':
+                     '#C6CFF6';
 }
 
-// Step 3: Performs GET request to url
+// GET request to url
 // ----------------------------------------------------
 d3.json(url, function (data) {
 
@@ -64,7 +64,7 @@ function createFeatures(earthquakeData) {
 }
 
 
-// Step 5: Map functionality
+// Map functionality
 // ----------------------------------------------------
 function createMap(earthquakes) {
 
